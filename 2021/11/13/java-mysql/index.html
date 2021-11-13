@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"baxw1.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="JavaWeb连接Mysql环境准备 下载eclipse：Eclipse Downloads | The Eclipse Foundation  下载JDK，配置JDK：nmd为啥子官网打不开，吐了  下载安装Tomcat：Apache Tomcat® - Welcome! 教程：Tomcat安装（安装版） - DesireYang - 博客园 (cnblogs.com)   连接到数据库：新建一">
+<meta name="description" content="JavaWeb连接Mysql环境准备 下载eclipse：Eclipse Downloads | The Eclipse Foundation  下载JDK，配置JDK：nmd为啥子官网打不开，吐了  下载安装Tomcat：Apache Tomcat® - Welcome!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何让JavaWeb连接Mysql">
 <meta property="og:url" content="https://baxw1.github.io/2021/11/13/java-mysql/index.html">
 <meta property="og:site_name" content="不爱洗碗&#39;s blog">
-<meta property="og:description" content="JavaWeb连接Mysql环境准备 下载eclipse：Eclipse Downloads | The Eclipse Foundation  下载JDK，配置JDK：nmd为啥子官网打不开，吐了  下载安装Tomcat：Apache Tomcat® - Welcome! 教程：Tomcat安装（安装版） - DesireYang - 博客园 (cnblogs.com)   连接到数据库：新建一">
+<meta property="og:description" content="JavaWeb连接Mysql环境准备 下载eclipse：Eclipse Downloads | The Eclipse Foundation  下载JDK，配置JDK：nmd为啥子官网打不开，吐了  下载安装Tomcat：Apache Tomcat® - Welcome!">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://baxw1.github.io/2021/11/13/java-mysql/p2.jpg">
 <meta property="og:image" content="https://baxw1.github.io/2021/11/13/java-mysql/p3.jpg">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://baxw1.github.io/2021/11/13/java-mysql/p9.jpg">
 <meta property="og:image" content="https://baxw1.github.io/2021/11/13/java-mysql/p10.jpg">
 <meta property="article:published_time" content="2021-11-13T12:21:43.000Z">
-<meta property="article:modified_time" content="2021-11-13T12:38:45.135Z">
+<meta property="article:modified_time" content="2021-11-13T13:33:35.761Z">
 <meta property="article:author" content="林桐">
 <meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
@@ -214,7 +214,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-11-13 20:21:43 / 修改时间：20:38:45" itemprop="dateCreated datePublished" datetime="2021-11-13T20:21:43+08:00">2021-11-13</time>
+      <time title="创建时间：2021-11-13 20:21:43 / 修改时间：21:33:35" itemprop="dateCreated datePublished" datetime="2021-11-13T20:21:43+08:00">2021-11-13</time>
     </span>
 
   
@@ -232,11 +232,11 @@
 </li>
 <li><p>下载JDK，配置JDK：nmd为啥子官网打不开，吐了</p>
 </li>
-<li><p>下载安装Tomcat：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Apache Tomcat® - Welcome!</a></p>
+<li><p>下载安装Tomcat：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Apache Tomcat® - Welcome!</a><span id="more"></span></p>
 <p>教程：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/desireyang/p/12119861.html">Tomcat安装（安装版） - DesireYang - 博客园 (cnblogs.com)</a></p>
 </li>
 </ol>
-<h2 id="连接到数据库："><a href="#连接到数据库：" class="headerlink" title="连接到数据库："></a>连接到数据库：</h2><h3 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h3><p>新建一个Web Dynamic Project，配置的时候Target Runtime选择apache Tomcat <span id="more"></span></p>
+<h2 id="连接到数据库："><a href="#连接到数据库：" class="headerlink" title="连接到数据库："></a>连接到数据库：</h2><h3 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h3><p>新建一个Web Dynamic Project，配置的时候Target Runtime选择apache Tomcat </p>
 <p><img src="/2021/11/13/java-mysql/p2.jpg" alt="p2"></p>
 <h3 id="准备一些依赖包"><a href="#准备一些依赖包" class="headerlink" title="准备一些依赖包"></a>准备一些依赖包</h3><ol>
 <li><p>下载dbutils包：</p>
