@@ -129,13 +129,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tag/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -164,6 +164,250 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2022/03/30/javascript-2-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar35.png">
+      <meta itemprop="name" content="林桐">
+      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不爱洗碗's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/30/javascript-2-1/" class="post-title-link" itemprop="url">javascript_2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-30 14:54:03" itemprop="dateCreated datePublished" datetime="2022-03-30T14:54:03+08:00">2022-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2022/03/30/javascript-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar35.png">
+      <meta itemprop="name" content="林桐">
+      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不爱洗碗's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/30/javascript-2/" class="post-title-link" itemprop="url">javascript_2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-30 14:49:42 / 修改时间：14:53:34" itemprop="dateCreated datePublished" datetime="2022-03-30T14:49:42+08:00">2022-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ES6 函数</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>定义一个函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">iNum1, iNum2</span>)</span>&#123; <span class="comment">//不必声明返回值</span></span><br><span class="line">	<span class="keyword">return</span> iNum1 + iNum2;  <span class="comment">//只需要使用 return 运算符后跟要返回的值即可</span></span><br><span class="line">    <span class="comment">//如果没有明确返回值，则返回undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>无需指明参数也能访问：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">arguments</span>[<span class="number">0</span>] == <span class="string">&quot;bye&quot;</span>) &#123;  <span class="comment">//arguments[0]是第一个参数</span></span><br><span class="line">      							<span class="comment">//arguments[1]是第二个参数....</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  alert(<span class="built_in">arguments</span>[<span class="number">0</span>]);</span><br><span class="line">  alert(<span class="built_in">arguments</span>.length); <span class="comment">//输出每次调用函数使用的参数个数</span></span><br><span class="line">    						<span class="comment">//用 arguments 对象判断传递给函数的参数个数，在函数内使用条件判断语句，可模拟函数重载</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><strong>函数可以使用函数之外定义的变量。</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2022/03/30/javascript-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar35.png">
+      <meta itemprop="name" content="林桐">
+      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不爱洗碗's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/30/javascript-1/" class="post-title-link" itemprop="url">javascript_1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-30 14:48:36 / 修改时间：14:53:39" itemprop="dateCreated datePublished" datetime="2022-03-30T14:48:36+08:00">2022-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ES6：</p>
+<h2 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h2><p> 5 种原始类型（primitive type：</p>
+<p><strong>Undefined、</strong></p>
+<p><strong>Null、</strong></p>
+<p><strong>Boolean、</strong></p>
+<p><strong>Number、</strong></p>
+<p><strong>String</strong></p>
+<p>null和undefined的<strong>值相同，类型不同</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>           <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>                <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span>         <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>          <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Number-类型"><a href="#Number-类型" class="headerlink" title="Number 类型"></a>Number 类型</h3><h6 id="尽管所有整数都可以表示为八进制或十六进制的字面量，但所有数学运算返回的都是十进制结果。"><a href="#尽管所有整数都可以表示为八进制或十六进制的字面量，但所有数学运算返回的都是十进制结果。" class="headerlink" title="尽管所有整数都可以表示为八进制或十六进制的字面量，但所有数学运算返回的都是十进制结果。"></a>尽管所有整数都可以表示为八进制或十六进制的字面量，但所有数学运算返回的都是十进制结果。</h6><p>浮点数：</p>
+<p><strong><strong>对于浮点字面量的有趣之处在于，用它进行计算前，真正存储的是字符串。</strong></strong></p>
+<p>特殊数：</p>
+<p>NaN：NaN 的另一个奇特之处在于，它与自身不相等</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="literal">NaN</span> == <span class="literal">NaN</span>);  <span class="comment">//输出 &quot;false&quot;</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="string">&quot;blue&quot;</span>));  <span class="comment">//输出 &quot;true&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h3><p>String 类型的独特之处在于，它是唯一没有固定大小的原始类型。</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p><strong>转换成字符串：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//布尔型转字符串</span></span><br><span class="line"><span class="keyword">var</span> bFound = <span class="literal">false</span>;</span><br><span class="line">alert(bFound.toString());	<span class="comment">//输出 &quot;false&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Number 类型的 toString() 方法</span></span><br><span class="line"><span class="comment">//默认模式</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> iNum2 = <span class="number">10.0</span>;</span><br><span class="line">alert(iNum1.toString());	<span class="comment">//输出 &quot;10&quot;</span></span><br><span class="line">alert(iNum2.toString());	<span class="comment">//输出 &quot;10&quot;</span></span><br><span class="line"><span class="comment">/* 无论最初采用什么表示法声明数字，Number 类型的 toString() 方法返回的都是数字的十进制表示。*/</span></span><br><span class="line"><span class="comment">//基模式</span></span><br><span class="line"><span class="keyword">var</span> iNum = <span class="number">10</span>;</span><br><span class="line">alert(iNum.toString(<span class="number">2</span>));	<span class="comment">//输出 &quot;1010&quot;</span></span><br><span class="line">alert(iNum.toString(<span class="number">8</span>));	<span class="comment">//输出 &quot;12&quot;</span></span><br><span class="line">alert(iNum.toString(<span class="number">16</span>));	<span class="comment">//输出 &quot;A&quot;</span></span><br><span class="line"><span class="comment">/*toString() 方法的参数是要转换的基数*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//arrayObject</span></span><br><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&quot;Banana&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Mango&quot;</span>];</span><br><span class="line">alert(fruits.toString());<span class="comment">//输出：Banana,Orange,Apple,Mango</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Date</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">alert(a.toString());<span class="comment">//输出：Sat Mar 19 2022 20:31:18 GMT+0800 (中国标准时间)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>转换成Number：</strong></p>
+<p><strong>parseInt() 和 parseFloat()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//parseInt()</span></span><br><span class="line"><span class="comment">/*parseInt() 方法首先查看位置 0 处的字符，判断它是否是个有效数字；如果不是，该方法将返回 NaN，不再继续执行其他操作。但是有效数字，该方法将查看位置 1 处的字符，进行同样的测试。这一过程将持续到发现非有效数字的字符为止，此时 parseInt() 将把该字符之前的字符串转换成数字。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;12345red&quot;</span>);	<span class="comment">//返回 12345</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;0xA&quot;</span>);	<span class="comment">//返回 10</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;56.9&quot;</span>);	<span class="comment">//返回 56</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;red&quot;</span>);	<span class="comment">//返回 NaN</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;red12345&quot;</span>);	<span class="comment">//返回NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注意：</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;010&quot;</span>);	<span class="comment">//返回 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//基模式</span></span><br><span class="line"><span class="keyword">var</span> iNum1 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>, <span class="number">2</span>);	<span class="comment">//返回 2</span></span><br><span class="line"><span class="keyword">var</span> iNum2 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>, <span class="number">8</span>);	<span class="comment">//返回 8</span></span><br><span class="line"><span class="keyword">var</span> iNum3 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>, <span class="number">10</span>);	<span class="comment">//返回 10</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//parseFloat()</span></span><br><span class="line"><span class="comment">/* 第一个小数点有效，第二个小数点无效；8进制的先导0会被忽略；16进制的先导0x会被认为是无效字符，返回NaN*/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>强制类型转换：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Boolean() 函数</span></span><br><span class="line"><span class="comment">/*当要转换的值是至少有一个字符的字符串、非 0 数字或对象时，返回 true。如果该值是空字符串、数字 0、undefined 或 null，返回 false。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b1 = <span class="built_in">Boolean</span>(<span class="keyword">new</span> object());	<span class="comment">//true - 对象</span></span><br><span class="line"><span class="keyword">var</span> b1 = <span class="built_in">Boolean</span>(<span class="literal">null</span>);		<span class="comment">//false - null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Number() 函数</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">false</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">true</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//String() 函数</span></span><br><span class="line"><span class="comment">/* 强制转换成字符串和调用 toString() 方法的唯一不同之处在于:</span></span><br><span class="line"><span class="comment">	String()对 null 和 undefined 值强制类型转换可以生成字符串</span></span><br><span class="line"><span class="comment">	toString()则会引发错误： */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="built_in">String</span>(<span class="literal">null</span>);	<span class="comment">//&quot;null&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oNull = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> s2 = oNull.toString();	<span class="comment">//会引发错误</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><h3 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//属性：</span></span><br><span class="line"><span class="title">constructor</span>//对创建对象的函数的引用（指针）。对于 <span class="title">Object</span> 对象，该指针指向原始的 <span class="title">Object</span>(<span class="params"></span>) 函数。</span><br><span class="line"><span class="title">Prototype</span>//对该对象的对象原型的引用。对于所有的对象，它默认返回 <span class="title">Object</span> 对象的一个实例。</span><br><span class="line"></span><br><span class="line">//方法：</span><br><span class="line"><span class="title">hasOwnProperty</span>(<span class="params">property</span>)//判断对象是否有某个特定的属性。必须用字符串指定该属性。（例如，<span class="title">o</span>.<span class="title">hasOwnProperty</span>(<span class="params"><span class="string">&quot;name&quot;</span></span>)）</span><br><span class="line"><span class="title">IsPrototypeOf</span>(<span class="params">object</span>)//判断该对象是否为另一个对象的原型。</span><br><span class="line"><span class="title">PropertyIsEnumerable</span>//判断给定的属性是否可以用 <span class="title">for</span>...<span class="title">in</span> 语句进行枚举。</span><br><span class="line"><span class="title">ToString</span>(<span class="params"></span>)//返回对象的原始字符串表示。</span><br><span class="line"><span class="title">ValueOf</span>(<span class="params"></span>)//返回最适合该对象的原始值。对于许多对象，该方法返回的值都与 <span class="title">ToString</span>(<span class="params"></span>) 的返回值相同。</span><br><span class="line">//上面列出的每种属性和方法都会被其他对象覆盖。</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>typeof和instanof：</strong></p>
+<p>typeof：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">&quot;John&quot;</span>                 <span class="comment">// 返回 &quot;string&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">3.14</span>                   <span class="comment">// 返回 &quot;number&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span>                    <span class="comment">// 返回 &quot;number&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">false</span>                  <span class="comment">// 返回 &quot;boolean&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]              <span class="comment">// 返回 &quot;object&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;<span class="attr">name</span>:<span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>:<span class="number">34</span>&#125;  <span class="comment">// 返回 &quot;object&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>()             <span class="comment">// 返回 &quot;object&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;         <span class="comment">// 返回 &quot;function&quot; //注意</span></span><br><span class="line"><span class="keyword">typeof</span> myCar                  <span class="comment">// 返回 &quot;undefined&quot; *</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>                   <span class="comment">// 返回 &quot;object&quot; //注意</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oStringObject = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">alert(oStringObject <span class="keyword">instanceof</span> <span class="built_in">String</span>);	<span class="comment">//输出 &quot;true&quot;</span></span><br><span class="line"></span><br><span class="line">alert(<span class="keyword">typeof</span>(oStringObject)); <span class="comment">//输出object</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -258,7 +502,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/28/%E7%AC%94%E8%AE%B01/" class="post-title-link" itemprop="url">网络安全技术笔记</a>
+          <a href="/2021/12/28/%E7%AC%94%E8%AE%B01/" class="post-title-link" itemprop="url">网络安全技术笔记1</a>
         </h2>
 
         <div class="post-meta-container">
@@ -268,10 +512,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-12-28 22:24:33 / 修改时间：22:36:22" itemprop="dateCreated datePublished" datetime="2021-12-28T22:24:33+08:00">2021-12-28</time>
+      <time title="创建时间：2021-12-28 22:24:33" itemprop="dateCreated datePublished" datetime="2021-12-28T22:24:33+08:00">2021-12-28</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-01-03 19:14:02" itemprop="dateModified" datetime="2022-01-03T19:14:02+08:00">2022-01-03</time>
+      </span>
 
   
 </div>
@@ -676,259 +926,6 @@
 <p>fridao.getallFriend_info()返回的result是一个friendList，先用get(0)得到第一个friend对象，再用getCollege()得到college的值。</p>
 <p>如果要获取其他的值，同理；</p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2021/11/13/dao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar35.png">
-      <meta itemprop="name" content="林桐">
-      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不爱洗碗's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/13/dao/" class="post-title-link" itemprop="url">创建dao层</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-13 21:23:31" itemprop="dateCreated datePublished" datetime="2021-11-13T21:23:31+08:00">2021-11-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-14 15:33:57" itemprop="dateModified" datetime="2021-11-14T15:33:57+08:00">2021-11-14</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="dao层的创建"><a href="#dao层的创建" class="headerlink" title="dao层的创建"></a>dao层的创建</h1><blockquote>
-<p>我要疯了，java真的好难，我努力试图理解，真的好难理解啊</p>
-</blockquote>
-<h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2><p>JDBC是与数据库连接层，dao层就是数据库访问层；</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/13/dao/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2021/11/13/mysql-class/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar35.png">
-      <meta itemprop="name" content="林桐">
-      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不爱洗碗's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/13/mysql-class/" class="post-title-link" itemprop="url">JavaMysql创造实体类</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-13 21:03:11" itemprop="dateCreated datePublished" datetime="2021-11-13T21:03:11+08:00">2021-11-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-14 11:25:19" itemprop="dateModified" datetime="2021-11-14T11:25:19+08:00">2021-11-14</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="如何创造实体类"><a href="#如何创造实体类" class="headerlink" title="如何创造实体类"></a>如何创造实体类</h2><ol>
-<li>新建一个实体类的工具包（bean就是实体的意思，意思是在这个包里的代码的作用使创造实体；是一种代码规范，大家都这样安排，所以我们也这样安排）</li>
-</ol>
-<p><img src="/2021/11/13/mysql-class/p2.png" alt="p2"></p>
-<ol start="2">
-<li>新建一个类，类名最好就是你的表名</li></ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/13/mysql-class/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2021/11/13/java-mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar35.png">
-      <meta itemprop="name" content="林桐">
-      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不爱洗碗's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/13/java-mysql/" class="post-title-link" itemprop="url">如何让JavaWeb连接Mysql</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-13 20:21:43" itemprop="dateCreated datePublished" datetime="2021-11-13T20:21:43+08:00">2021-11-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-14 11:21:54" itemprop="dateModified" datetime="2021-11-14T11:21:54+08:00">2021-11-14</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="JavaWeb连接Mysql"><a href="#JavaWeb连接Mysql" class="headerlink" title="JavaWeb连接Mysql"></a>JavaWeb连接Mysql</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ol>
-<li><p>下载eclipse：<a target="_blank" rel="noopener" href="https://www.eclipse.org/downloads/">Eclipse Downloads | The Eclipse Foundation</a></p>
-<p>记得安装<strong>JavaWeb版本，</strong>/<strong>安装的时候会自动下载JRE，注意记下JRE的下载位置，后面会用到</strong></p>
-</li>
-<li><p>下载JDK，配置JDK：nmd为啥子官网打不开，吐了</p>
-</li>
-<li><p>安装和配置MySQL：<a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-install.html">MySQL 安装 | 菜鸟教程 (runoob.com)</a></p>
-</li>
-<li><p>安装navicat(也可以不装，如果你对命令行操作数据库很熟悉的话)：<a target="_blank" rel="noopener" href="https://www.navicat.com.cn/products">Navicat | 产品</a></p>
-<p>彩色的和绿色的都可以。可以免费用14天，先下载一个，过期了再下载另一个，就可以白嫖28天。如果嫌麻烦可以淘宝买一个永久许可证，很便宜</p>
-</li>
-<li><p>下载安装Tomcat：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Apache Tomcat® - Welcome!</a></p></li></ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/13/java-mysql/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
