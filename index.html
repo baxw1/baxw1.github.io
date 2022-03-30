@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2022/03/30/javascript-2-1/">
+    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2022/03/30/javascript-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar35.png">
@@ -186,7 +186,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/30/javascript-2-1/" class="post-title-link" itemprop="url">javascript_2</a>
+          <a href="/2022/03/30/javascript-4/" class="post-title-link" itemprop="url">javascript_4</a>
         </h2>
 
         <div class="post-meta-container">
@@ -196,8 +196,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-03-30 14:54:03" itemprop="dateCreated datePublished" datetime="2022-03-30T14:54:03+08:00">2022-03-30</time>
+      <time title="创建时间：2022-03-30 14:57:30 / 修改时间：14:57:55" itemprop="dateCreated datePublished" datetime="2022-03-30T14:57:30+08:00">2022-03-30</time>
     </span>
 
   
@@ -210,7 +211,103 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="call"><a href="#call" class="headerlink" title="call():"></a>call():</h2><p>第一个参数用来指定this的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassA</span>(<span class="params">sColor</span>) </span>&#123; <span class="comment">//定义一个超类ClassA</span></span><br><span class="line">    <span class="built_in">this</span>.color = sColor;</span><br><span class="line">    <span class="built_in">this</span>.sayColor = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="built_in">this</span>.color);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassB</span>(<span class="params">sColor, sName</span>) </span>&#123;</span><br><span class="line">    ClassA.call(<span class="built_in">this</span>, SColor);<span class="comment">//这里的this就是ClassB</span></span><br><span class="line">    <span class="built_in">this</span>.name = sName;</span><br><span class="line">    <span class="built_in">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="built_in">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="apply-："><a href="#apply-：" class="headerlink" title="apply()："></a>apply()：</h2><p>第一个参数说明应该赋予函数中的 this 关键字的值(与call的第一个参数一样)；</p>
+<p>第二个参数是由其他参数字符串构成的数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ClassB</span>(<span class="params">sColor, sName</span>) </span>&#123;</span><br><span class="line">   </span><br><span class="line">    ClassA.apply(<span class="built_in">this</span>, <span class="built_in">arguments</span>);<span class="comment">//arguments是ClassB的整个参数对象</span></span><br><span class="line">  <span class="comment">//ClassA.apply(this, new Array(sColor));	也可以这样</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">this</span>.name = sName;</span><br><span class="line">    <span class="built_in">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="built_in">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2022/03/30/javascript-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar35.png">
+      <meta itemprop="name" content="林桐">
+      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不爱洗碗's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/30/javascript-3/" class="post-title-link" itemprop="url">javascript_2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-30 14:54:03 / 修改时间：14:57:16" itemprop="dateCreated datePublished" datetime="2022-03-30T14:54:03+08:00">2022-03-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p><strong>创建：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a_object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+
+<p><strong>废除：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oObject = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line"><span class="comment">// do something with the object here</span></span><br><span class="line">oObject = <span class="literal">null</span>; </span><br></pre></td></tr></table></figure>
+
+<p><strong>三种对象</strong>：本地对象，内置对象，宿主对象</p>
+<p>本地对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span></span><br><span class="line"><span class="built_in">Function</span></span><br><span class="line"><span class="built_in">Array</span></span><br><span class="line"><span class="built_in">String</span></span><br><span class="line"><span class="built_in">Boolean</span></span><br><span class="line"><span class="built_in">Number</span></span><br><span class="line"><span class="built_in">Date</span></span><br><span class="line"><span class="built_in">RegExp</span>	<span class="comment">//正则表达式</span></span><br><span class="line"><span class="built_in">Error</span></span><br><span class="line"><span class="built_in">EvalError</span></span><br><span class="line"><span class="built_in">ReferenceError</span></span><br><span class="line"><span class="built_in">SyntaxError</span></span><br><span class="line"><span class="built_in">TypeError</span></span><br><span class="line"><span class="built_in">URIError</span></span><br></pre></td></tr></table></figure>
+
+<p>内置对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现</span><br><span class="line">//开发者不必明确实例化内置对象，它已被实例化了</span><br><span class="line">Global对象</span><br><span class="line">Math对象</span><br></pre></td></tr></table></figure>
+
+<p>宿主对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DOM</span><br><span class="line">BOM</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p><strong>ECMAScript 只有公用作用域</strong></p>
+<p><strong>ECMAScript 没有静态作用域</strong></p>
+<p>ECMAScript 中的所有对象的所有属性和方法都是公用的。</p>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><p>关键字 this 总是指向<strong>调用该方法的对象</strong></p>
+<h2 id="定义一个类和对象："><a href="#定义一个类和对象：" class="headerlink" title="定义一个类和对象："></a>定义一个类和对象：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//混合的构造函数/原型方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">sColor,iDoors,iMpg</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.color = sColor;</span><br><span class="line">  <span class="built_in">this</span>.doors = iDoors;</span><br><span class="line">  <span class="built_in">this</span>.mpg = iMpg;</span><br><span class="line">  <span class="built_in">this</span>.drivers = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">&quot;Mike&quot;</span>,<span class="string">&quot;John&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Car.prototype.showColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="built_in">this</span>.color);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oCar1 = <span class="keyword">new</span> Car(<span class="string">&quot;red&quot;</span>,<span class="number">4</span>,<span class="number">23</span>);</span><br><span class="line"><span class="keyword">var</span> oCar2 = <span class="keyword">new</span> Car(<span class="string">&quot;blue&quot;</span>,<span class="number">3</span>,<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">oCar1.drivers.push(<span class="string">&quot;Bill&quot;</span>);</span><br><span class="line"></span><br><span class="line">alert(oCar1.drivers);	<span class="comment">//输出 &quot;Mike,John,Bill&quot;</span></span><br><span class="line">alert(oCar2.drivers);	<span class="comment">//输出 &quot;Mike,John&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改对象或方法："><a href="#修改对象或方法：" class="headerlink" title="修改对象或方法："></a>修改对象或方法：</h2><p>重写已有方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.originalToString = <span class="built_in">Function</span>.prototype.toString;<span class="comment">//存储原始函数的指针，以便以后的使用。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//函数名只是指向函数的指针，因此可以轻松地指向其他函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Function code hidden&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(sayHi.toString());	<span class="comment">//输出 &quot;Function code hidden&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注意：oString() 指向的原始函数将被无用存储单元回收程序回收，因为它被完全废弃了。没有能够恢复原始函数的方法，所以在覆盖原始方法前，比较安全的做法是存储它的指针，以便以后的使用。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -839,92 +936,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="烦躁…"><a href="#烦躁…" class="headerlink" title="烦躁…."></a>烦躁….</h1><p>烦心事一堆堆。</p>
 <p>昨天和今天叹的气都要能给大棚供二氧化碳了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2021/11/14/dao2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar35.png">
-      <meta itemprop="name" content="林桐">
-      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不爱洗碗's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/14/dao2/" class="post-title-link" itemprop="url">dao2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-14 19:40:59" itemprop="dateCreated datePublished" datetime="2021-11-14T19:40:59+08:00">2021-11-14</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-23 08:48:07" itemprop="dateModified" datetime="2021-11-23T08:48:07+08:00">2021-11-23</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="（增）含参数的更新："><a href="#（增）含参数的更新：" class="headerlink" title="（增）含参数的更新："></a>（增）含参数的更新：</h3><h4 id="dao"><a href="#dao" class="headerlink" title="dao:"></a>dao:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">insertFriend_info</span><span class="params">(friend_info friend)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> result = <span class="keyword">false</span>;<span class="comment">//先设它为false</span></span><br><span class="line">		String sql = <span class="string">&quot;insert into friend_info(name,sex,highschool,college,tele,wx,qq) VALUES (?,?,?,?,?,?,?)&quot;</span>;</span><br><span class="line">		Object[] obj = &#123;</span><br><span class="line">				friend.getName(), friend.getSex(), friend.getHighschool(), friend.getCollege(), friend.getTele(), friend.getWx(), friend.getQq()</span><br><span class="line">						&#125;;</span><br><span class="line">		System.out.println(obj[<span class="number">2</span>]);</span><br><span class="line">		<span class="keyword">int</span> n = JDBC.updateFrid_info(obj, sql);</span><br><span class="line">		<span class="keyword">if</span> (n&gt;<span class="number">0</span>) &#123;</span><br><span class="line">			result = <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">updateFrid_info</span><span class="params">(Object[] obj, String sql)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">		connection = getConn();<span class="comment">//与数据库建立连接，连接名为connection</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			prs = connection.prepareStatement(sql); <span class="comment">//预处理sql语句</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.length; i++) &#123;</span><br><span class="line">				prs.setObject(i+<span class="number">1</span>, obj[i]);<span class="comment">//将参数插入到sql语句中</span></span><br><span class="line">			&#125;</span><br><span class="line">			n = prs.executeUpdate();<span class="comment">//执行语句并返回受影响的行</span></span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> n;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="不含参数的查询："><a href="#不含参数的查询：" class="headerlink" title="不含参数的查询："></a>不含参数的查询：</h3><h4 id="dao："><a href="#dao：" class="headerlink" title="dao："></a>dao：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;friend_info&gt; <span class="title">getallFriend_info</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String sql = <span class="string">&quot;SELECT * FROM friend_info&quot;</span>;</span><br><span class="line">		ResultSet result = JDBC.getallFrid_info(sql); <span class="comment">//把sql交给jdbC链接给数据库执行，并将结果存在result中</span></span><br><span class="line">		List&lt;friend_info&gt; friendList = <span class="keyword">new</span> ArrayList&lt;friend_info&gt;();<span class="comment">//新建一个friendlist</span></span><br><span class="line">		</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="keyword">while</span>(result.next()) &#123;</span><br><span class="line">					friend_info friend = <span class="keyword">new</span> friend_info();<span class="comment">//新建一个friend</span></span><br><span class="line">					friend.setName(result.getString(<span class="string">&quot;name&quot;</span>));<span class="comment">//依次存入属性值</span></span><br><span class="line">					friend.setSex(result.getString(<span class="string">&quot;sex&quot;</span>));</span><br><span class="line">				friend.setHighschool(result.getString(<span class="string">&quot;highschool&quot;</span>));</span><br><span class="line">					friend.setCollege(result.getString(<span class="string">&quot;college&quot;</span>));</span><br><span class="line">					friend.setTele(result.getString(<span class="string">&quot;tele&quot;</span>));</span><br><span class="line">					friend.setWx(result.getString(<span class="string">&quot;wx&quot;</span>));</span><br><span class="line">					friend.setQq(result.getString(<span class="string">&quot;qq&quot;</span>));</span><br><span class="line">					friendList.add(friend);<span class="comment">//将赋值好的friend存入list中</span></span><br><span class="line">					&#125;</span><br><span class="line">            	&#125;<span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">return</span> friendList;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="JDBC：-1"><a href="#JDBC：-1" class="headerlink" title="JDBC："></a>JDBC：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ResultSet <span class="title">getallFrid_info</span><span class="params">(String sql)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		connection = getConn();<span class="comment">//与数据库建立连接，连接名为connection</span></span><br><span class="line">		ResultSet result = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			prs = connection.prepareStatement(sql); <span class="comment">//预处理sql语句</span></span><br><span class="line">			result = prs.executeQuery();<span class="comment">//执行sql并将返回值存在result中</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    friend_infoDao fridao = <span class="keyword">new</span> friend_infoDao();</span><br><span class="line">	Object[] str = fridao.getallFriend_info().toArray();</span><br><span class="line">System.out.println(fridao.getallFriend_info().get(<span class="number">0</span>).getCollege());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>fridao.getallFriend_info()返回的result是一个friendList，先用get(0)得到第一个friend对象，再用getCollege()得到college的值。</p>
-<p>如果要获取其他的值，同理；</p>
 
       
     </div>

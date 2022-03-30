@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -164,6 +164,92 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://baxw1.github.io/2021/11/14/dao2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar35.png">
+      <meta itemprop="name" content="林桐">
+      <meta itemprop="description" content="不爱洗碗的blog，分享一些自己的学习、生活、美食和负能量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不爱洗碗's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/14/dao2/" class="post-title-link" itemprop="url">dao2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-14 19:40:59" itemprop="dateCreated datePublished" datetime="2021-11-14T19:40:59+08:00">2021-11-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-23 08:48:07" itemprop="dateModified" datetime="2021-11-23T08:48:07+08:00">2021-11-23</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="（增）含参数的更新："><a href="#（增）含参数的更新：" class="headerlink" title="（增）含参数的更新："></a>（增）含参数的更新：</h3><h4 id="dao"><a href="#dao" class="headerlink" title="dao:"></a>dao:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">insertFriend_info</span><span class="params">(friend_info friend)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> result = <span class="keyword">false</span>;<span class="comment">//先设它为false</span></span><br><span class="line">		String sql = <span class="string">&quot;insert into friend_info(name,sex,highschool,college,tele,wx,qq) VALUES (?,?,?,?,?,?,?)&quot;</span>;</span><br><span class="line">		Object[] obj = &#123;</span><br><span class="line">				friend.getName(), friend.getSex(), friend.getHighschool(), friend.getCollege(), friend.getTele(), friend.getWx(), friend.getQq()</span><br><span class="line">						&#125;;</span><br><span class="line">		System.out.println(obj[<span class="number">2</span>]);</span><br><span class="line">		<span class="keyword">int</span> n = JDBC.updateFrid_info(obj, sql);</span><br><span class="line">		<span class="keyword">if</span> (n&gt;<span class="number">0</span>) &#123;</span><br><span class="line">			result = <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">updateFrid_info</span><span class="params">(Object[] obj, String sql)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">		connection = getConn();<span class="comment">//与数据库建立连接，连接名为connection</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			prs = connection.prepareStatement(sql); <span class="comment">//预处理sql语句</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.length; i++) &#123;</span><br><span class="line">				prs.setObject(i+<span class="number">1</span>, obj[i]);<span class="comment">//将参数插入到sql语句中</span></span><br><span class="line">			&#125;</span><br><span class="line">			n = prs.executeUpdate();<span class="comment">//执行语句并返回受影响的行</span></span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> n;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="不含参数的查询："><a href="#不含参数的查询：" class="headerlink" title="不含参数的查询："></a>不含参数的查询：</h3><h4 id="dao："><a href="#dao：" class="headerlink" title="dao："></a>dao：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;friend_info&gt; <span class="title">getallFriend_info</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String sql = <span class="string">&quot;SELECT * FROM friend_info&quot;</span>;</span><br><span class="line">		ResultSet result = JDBC.getallFrid_info(sql); <span class="comment">//把sql交给jdbC链接给数据库执行，并将结果存在result中</span></span><br><span class="line">		List&lt;friend_info&gt; friendList = <span class="keyword">new</span> ArrayList&lt;friend_info&gt;();<span class="comment">//新建一个friendlist</span></span><br><span class="line">		</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="keyword">while</span>(result.next()) &#123;</span><br><span class="line">					friend_info friend = <span class="keyword">new</span> friend_info();<span class="comment">//新建一个friend</span></span><br><span class="line">					friend.setName(result.getString(<span class="string">&quot;name&quot;</span>));<span class="comment">//依次存入属性值</span></span><br><span class="line">					friend.setSex(result.getString(<span class="string">&quot;sex&quot;</span>));</span><br><span class="line">				friend.setHighschool(result.getString(<span class="string">&quot;highschool&quot;</span>));</span><br><span class="line">					friend.setCollege(result.getString(<span class="string">&quot;college&quot;</span>));</span><br><span class="line">					friend.setTele(result.getString(<span class="string">&quot;tele&quot;</span>));</span><br><span class="line">					friend.setWx(result.getString(<span class="string">&quot;wx&quot;</span>));</span><br><span class="line">					friend.setQq(result.getString(<span class="string">&quot;qq&quot;</span>));</span><br><span class="line">					friendList.add(friend);<span class="comment">//将赋值好的friend存入list中</span></span><br><span class="line">					&#125;</span><br><span class="line">            	&#125;<span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">return</span> friendList;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="JDBC：-1"><a href="#JDBC：-1" class="headerlink" title="JDBC："></a>JDBC：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ResultSet <span class="title">getallFrid_info</span><span class="params">(String sql)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		connection = getConn();<span class="comment">//与数据库建立连接，连接名为connection</span></span><br><span class="line">		ResultSet result = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			prs = connection.prepareStatement(sql); <span class="comment">//预处理sql语句</span></span><br><span class="line">			result = prs.executeQuery();<span class="comment">//执行sql并将返回值存在result中</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    friend_infoDao fridao = <span class="keyword">new</span> friend_infoDao();</span><br><span class="line">	Object[] str = fridao.getallFriend_info().toArray();</span><br><span class="line">System.out.println(fridao.getallFriend_info().get(<span class="number">0</span>).getCollege());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fridao.getallFriend_info()返回的result是一个friendList，先用get(0)得到第一个friend对象，再用getCollege()得到college的值。</p>
+<p>如果要获取其他的值，同理；</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
